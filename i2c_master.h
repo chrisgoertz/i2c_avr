@@ -23,29 +23,6 @@
 #define I2C_STATUS_ERROR_TRANSMIT_NOT_ACKNOWLEDGED 21
 #define I2C_STATUS_ERROR_READ_NOT_ACKNOWLEDGED 22
 
-/**
- * \brief Returns the string representation of I2C error message by I2C_STATUS_ERROR code.
- * 
- * \param errorCode I2C_STATUS_ERROR code
- * 
- * \return const char* String representation of I2C error message.
- */
-const char* i2c_getErrorMessage(uint8_t errorCode)
-{
-	switch(errorCode)
-	{
-		case I2C_STATUS_ERROR_START_WAS_NOT_ACCEPTED:
-			return "Slave device not accepted START condition";
-		case I2C_STATUS_ERROR_TRANSMIT_OR_READ_WAS_NOT_ACKNOWLEDGED:
-			return "Slave device not acknowledged WRITE (TRANSMIT) or READ conditions";
-		case I2C_STATUS_ERROR_TRANSMIT_NOT_ACKNOWLEDGED:
-			return "Slave device not acknowledged WRITE (TRANSMIT) condition";
-		case I2C_STATUS_ERROR_READ_NOT_ACKNOWLEDGED:
-			return "Slave device not acknowledged READ condition";
-	};
-
-	return "Unknown I2C_STATUS_ERROR code";
-};
 
 /**
  * \brief Performs the initialization routine for I2C device. 
