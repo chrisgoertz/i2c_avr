@@ -23,7 +23,9 @@
 #define I2C_STATUS_ERROR_TRANSMIT_NOT_ACKNOWLEDGED 21
 #define I2C_STATUS_ERROR_READ_NOT_ACKNOWLEDGED 22
 
-
+#ifdef __cplusplus
+extern "C"{
+#endif
 /**
  * \brief Performs the initialization routine for I2C device. 
  *		Should be called just once, before any work with I2C device.
@@ -132,5 +134,7 @@ uint8_t i2c_master_readNack(void);
  */
 void i2c_master_stop(void);
 
-
+#ifdef __cplusplus
+}
+#endif
 #endif /* I2CMASTERDEVICE_H_ */
